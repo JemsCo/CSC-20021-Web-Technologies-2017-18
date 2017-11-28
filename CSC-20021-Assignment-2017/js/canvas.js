@@ -1,11 +1,15 @@
-function Canvas(w, h) {
+function Canvas(w, h, g) {
     this.w = w;
     this.h = h;
-    console.debug("this is happening");
+    this.graphics = g;
+
+
+    this.draw = function () {
+        g.font = "30px Arial";
+        g.strokeText("Hello World", 10, 50);
+    }
 }
 
-this.getWidth = function(){
-    return w;
-}
+var canvas = new Canvas(document.getElementById("canvas").getContext("2d"));
 
-var canvas = new Canvas(100, 100);
+canvas.draw();
