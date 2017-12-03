@@ -1,18 +1,109 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Canvas Test Area</title>
-    <script src="js/box.js"></script>
+  <title>Hello, world!</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="canvasAnim">
-        <canvas id="canvas" width="200" height="200" style="Border:1px solid black"></canvas>
-        <br>
-        <button onclick="stopAnimation()">Stop</button>
-        <button onclick="resetAnimation()">Reset</button>
-        <script src="js/canvas.js"></script>
+  <div class="container-fluid px-0" style="overflow-x:hidden">
+    <div class="jumbotron rounded-0 my-0">
+      <div class="continer clearfix">
+
+        <h1>Blog Project</h1>
+        <p>This is the blog page for the </p>
+      </div>
     </div>
+    <!-- Navbar header and brand -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">The Blog Project</a>
+      </div>
+      <!-- Toggler/collapsible Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div id="collapsibleNavbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link " href="# ">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " href="# ">Page 1</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " href="# ">Page 2</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li>
+            <a href="#" class="btn btn-primary btn-md mr-auto mx-2">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>Sign-up</a>
+          </li>
+          <li>
+            <a href="#" class="btn btn-primary btn-md mr-auto mx-2">
+              <span class="glyphicon glyphicon-log-in"></span>Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="continer-fluid">
+      <div class="row">
+        <div id="main-content" class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+          </div>
+        </div>
+        <div id="sidebar" class="col-lg-4 border border-secondary border-top-0 text-secondary">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="" class="card mx-2 my-2">
+                <div class="card-header">Weather</div>
+                <div id="weatherInfo" class="card-body"></div>
+                <div class="card-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="canvasAnim" class="card mx-2 my-2">
+                <div class="card-header">Rain Animation</div>
+                <canvas id="canvas" width="" height="" class="card-body" style="background:#343a40;"></canvas>
+                <div class="card-footer btn btn-group-justified btn-group-sm">
+                  <button class="btn btn-secondary" onclick="stopAnimation()">Stop</button>
+                  <button class="btn btn-secondary" onclick="resetAnimation()">Reset</button>
+                </div>
+                <script src="js/box.js"></script>
+                <script src="js/canvas.js"></script>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 </body>
 
 </html>
