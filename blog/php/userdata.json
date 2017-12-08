@@ -1,0 +1,13 @@
+[{
+    "username": "jemsco",
+    "password": "urmad4Blog",
+    "email": "james.copping97@gmail.com",
+    "fname": "James",
+    "surname": "Copping"
+}, {
+    "username": "admin",
+    "password": "Adminpassword1",
+    "email": "admin@blog.com",
+    "fname": "Admin",
+    "surname": "User"
+}]
