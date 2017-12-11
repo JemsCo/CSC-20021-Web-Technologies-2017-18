@@ -1,0 +1,36 @@
+[Tue Nov 28 14:51:25.626042 2017] [authz_core:error] [pid 3596:tid 1976] [client 127.0.0.1:4426] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:51:25 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:53:20.173318 2017] [authz_core:error] [pid 3596:tid 1976] [client 127.0.0.1:4480] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:53:20 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:58:33.655504 2017] [authz_core:error] [pid 8724:tid 1964] [client 127.0.0.1:4531] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:58:33 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:58:34.349575 2017] [authz_core:error] [pid 8724:tid 1964] [client 127.0.0.1:4532] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:58:34 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:58:34.664003 2017] [authz_core:error] [pid 8724:tid 1964] [client 127.0.0.1:4533] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:58:34 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:58:34.994513 2017] [authz_core:error] [pid 8724:tid 1964] [client 127.0.0.1:4534] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:58:34 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:58:35.194070 2017] [authz_core:error] [pid 8724:tid 1964] [client 127.0.0.1:4535] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:58:35 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:58:35.536506 2017] [authz_core:error] [pid 8724:tid 1964] [client 127.0.0.1:4536] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:58:35 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:08.444151 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4537] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:08 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:09.129765 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4538] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:09 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:09.605665 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4539] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:09 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:10.068218 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4540] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:10 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:10.471683 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4541] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:10 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:10.808954 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4542] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:10 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:11.254605 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4543] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:11 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:12.391317 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4544] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:12 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 14:59:12.695388 2017] [authz_core:error] [pid 11164:tid 1964] [client 127.0.0.1:4545] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:14:59:12 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"
+[Tue Nov 28 15:02:10.935330 2017] [authz_core:error] [pid 13136:tid 1964] [client 127.0.0.1:4587] AH01630: client denied by server configuration: D:/Documents/_Programming/WebDev/CSC-20021-Web-Technologies-2017-18/CSC-20021-Assignment-2017/
+127.0.0.1 - - [28/Nov/2017:15:02:10 +0000] "GET / HTTP/1.1" 403 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0"

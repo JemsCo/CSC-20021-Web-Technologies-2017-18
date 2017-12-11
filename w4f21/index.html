@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page - The Blog Project</title>
+
+  <meta name="description" content="Front page of the blog project, where users can find recent blog posts from other usersamong lots of other cool fetures"
+  />
+  <meta name="robots" content="noindex,nofollow">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+
+  <script src="js/session.js"></script>
+  <script src="js/box.js"></script>
+  <script src="js/canvas.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="container-fluid px-0">
+    <!-- Navbar header and brand -->
+    <nav class="navbar navbar-expand-md py-1 bg-dark navbar-dark fixed-top">
+      <div class="navbar-header align-items-center">
+        <a class="navbar-brand d-flex justify-content-around align-items-center" href="index.html">
+          <canvas id="canvas" height="60" width="60" style="background:#343A40;"></canvas>
+          <div class="mx-2">TBP</div>
+        </a>
+      </div>
+      <!-- Toggler/collapsible Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div id="collapsibleNavbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cv.html">HTML CV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+        <div id='pageOptions'>
+          <button class="btn btn-dark" type='button' data-toggle='modal' data-target='#pageoptionsModal'>
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div id='navbarRight' class="btn-group">
+        </div>
+      </div>
+    </nav>
+    <!-- Modal -->
+    <div class='modal fade' id='pageoptionsModal' role='dialog'>
+      <div class='modal-dialog'>
+        <!-- Modal content-->
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h4 class='modal-title'>Page Options</h4>
+            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          </div>
+          <div class='modal-body'>
+            <div id='pageoptionsForm'>
+              <div class="d-flex align-items-between">
+                <div class="d-flex flex-column justify-content-center align-items-start">
+                  <small class="text-muted">Press the plus and minus buttons to change the size of the headers...</small>
+                  <div class="d-flex justify-content-start align-items-baseline">
+                    <h1>A</h1>
+                    <h2>A</h2>
+                    <h3>A</h3>
+                    <h4>A</h4>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary" onclick="setFontSize(getFontSize()+2)">
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="setFontSize(getFontSize()-2)">
+                      <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-between">
+                  <small class="text-muted">Select a color for the headings background</small>
+                  <select id="backgroundSelected" class="m-2" name="background">
+                    <option value="" selected>No Background</option>
+                    <option value="black">Black</option>
+                    <option value="gray">Gray</option>
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="cyan">Cyan</option>
+                  </select>
+                  <button type="button" class="btn btn-primary" onclick="setHeaderColor(document.getElementById('backgroundSelected').value)">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class='modal-footer'>
+                <div class='form-group btn-group float-right'>
+                  <button type='submit' class='btn btn-success' onclick='saveOptions()'>Save Options</button>
+                  <button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron mt-5">
+      <div class="continer">
+        <h1 id="pageTitle">Home Page</h1>
+        <p>The place where you can get all your recent blog posts and the information that you need</p>
+      </div>
+    </div>
+
+    <div class="continer m-2">
+      <div class="row m-2">
+        <div id="main-content" class="col-lg-8 col-sm-12 mb-5">
+          <div id="recentpostswidgit" class="list-group mb-5">
+            <div class='list-group-item list-group-item-primary'>
+              <h3 class='text-center'>Most Recent Posts</h3>
+            </div>
+            <div id="recentposts">
+            </div>
+          </div>
+          <div id="video-container" class="d-flex flex-column">
+            <!-- Video -->
+            <video id="video">
+              <source src="videos/video2.mp4" type="video/mp4">
+              <p>
+                Your browser doesn't support HTML5 video.
+              </p>
+            </video>
+            <!-- Video Controls -->
+            <div id="video-controls" class="d-flex justify-content-around">
+              <button type="button" id="play-pause" class="btn btn-primary">
+                <i class='fa fa-play' aria-hidden='true'></i>
+              </button>
+              <input type="range" id="seek-bar" class="slider" value="0">
+              <input type="range" id="volume-bar" class="slider" min="0" max="1" step="0.1" value="0.1">
+              <button type="button" id="mute" class="btn btn-primary">
+                <i class="fa fa-volume-up" aria-hidden="true"></i>
+              </button>
+              <button type="button" id="full-screen" class="btn btn-primary">Full-Screen</button>
+            </div>
+          </div>
+          <script src="js/videocontrols.js"></script>
+        </div>
+        <div id="sidebar" class="col-lg-4 col-sm-12 mb-5 text-secondary">
+          <div id="weatherInfo" class="card">
+            <div class="card-header">
+              <h3>Weather information</h3>
+            </div>
+            <div class="card-body">
+              Loading data...
+            </div>
+          </div>
+          <script src="js/weather.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

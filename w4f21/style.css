@@ -1,0 +1,45 @@
+body {
+    overflow-x: hidden;
+}
+
+#video-container {
+    max-width: 600px;
+    min-width: 100px;
+    background: black;
+    padding-bottom: 5px;
+}
+
+.post-title {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.post-summary {
+    color: rgb(24, 26, 27);
+}
+
+.post-footer {
+    font-size: 20px;
+    color: rgb(25, 102, 165);
+}
+
+.post-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.post-content-recent {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.alert-fixed {
+    position: fixed;
+    bottom: -1em;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    border-radius: 2px;
+}
