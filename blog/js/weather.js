@@ -1,15 +1,18 @@
-var url = "php/getJSON.php?url=http://open.live.bbc.co.uk/weather/feeds/en/2645897/3dayforecast.rss";
-var weatherInfo = document.getElementById("weatherInfo").childNodes;
-var request = new XMLHttpRequest();
+window.onload = function () {
+    var url = "php/getJSON.php?url=http://open.live.bbc.co.uk/weather/feeds/en/2645897/3dayforecast.rss";
+    weatherInfo = document.getElementById("weatherInfo").childNodes;
 
-loadWeatherInfo(url, weatherInfo, handleWeatherInfo);
+
+    loadWeatherInfo(url, weatherInfo, handleWeatherInfo);
+}
 
 function loadWeatherInfo(url, parent, callback) {
+    var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             callback(this.responseText, parent);
         } else {
-            weatherInfo[3].innerHTML = "Loading Data...";
+            parent[3].innerHTML = "Loading Data...";
         }
     }
     request.open("GET", url, true);
@@ -19,8 +22,9 @@ function loadWeatherInfo(url, parent, callback) {
 function handleWeatherInfo(json, parent) {
     var data = JSON.parse(json);
     var items = data.channel.item;
-    weatherInfo[1].innerHTML = "<h3>"+data.channel.title+"</h3>";
-    weatherInfo[3].innerHTML = "";
+    var title = parent[1].childNodes;
+    title[1].innerText = data.channel.title;
+    parent[3].innerHTML = "";
     var date = [];
     var info = [];
     for (var i = 0; i < items.length; i++) {
@@ -28,6 +32,6 @@ function handleWeatherInfo(json, parent) {
         info[i] = items[i].title.substr(items[i].title.indexOf(":") + 2, items[i].title.length);
     }
     for (var i = 0; i < items.length; i++) {
-        weatherInfo[3].innerHTML += "<h3>" + date[i] + "</h3><p>" + info[i] + "</p>";
+        parent[3].innerHTML += "<h5>" + date[i] + "</h5><p>" + info[i] + "</p>";
     }
 }

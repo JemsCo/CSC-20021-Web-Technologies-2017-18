@@ -1,11 +1,14 @@
 class Box {
-    constructor(x, y, w, h) {
+    constructor(x, y, w, h, xVel, yVel, behavoiur) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
-        this.xVel = 0;
-        this.yVel = 2 + (this.w*2);
+        this.xVel = xVel;
+        this.yVel = yVel;
+        this.xAcc = 0;
+        this.yAcc = 0;
+        this.behavoiur = behavoiur;
         this.color = "#FFFFFFFF";
     }
 
@@ -14,19 +17,41 @@ class Box {
         context.fillRect(this.x, this.y, this.w, this.h);
     }
 
+    applyfroce(xFroce, yForce) {
+        this.xAcc += xFroce;
+        this.yAcc += yForce;
+    }
+
     update(canvas) {
+        if (this.behavoiur == "walker") {
+            this.applyfroce(0, .5);
+            if (this.xVel < .05 && this.yVel < .05) {
+                this.applyfroce((Math.round(Math.random() * 2 * (Math.floor(Math.random() * 2) == 1 ? 1 : -1))), (Math.round(Math.random() * -3)));
+            }
+            this.xVel += this.xAcc;
+            this.yVel += this.yAcc;
+            this.xAcc = 0;
+            this.yAcc = 0;
+            this.xVel *= .9;
+            this.yVel *= .9;
+        }
+        
         this.x += this.xVel;
         this.y += this.yVel;
         this.check(canvas);
     }
 
     check(canvas) {
-        // this.bounceXWalls(canvas);
-        // this.bounceYWalls(canvas);
-        if ((this.y - this.h) > canvas.height) {
-            this.y = 0-this.h;
-            this.x = (Math.random() * canvas.width) - this.w;
+        if (this.behavoiur == "bounce" || this.behavoiur == "walker") {
+            this.bounceXWalls(canvas);
+            this.bounceYWalls(canvas);
+        } else {
+            if ((this.y - this.h) > canvas.height) {
+                this.y = 0 - this.h;
+                this.x = (Math.random() * canvas.width) - this.w;
+            }
         }
+
     }
 
     bounceXWalls(canvas) {
@@ -42,11 +67,11 @@ class Box {
 
     bounceYWalls(canvas) {
         if (this.y + this.h > canvas.height) {
-            this.yVel *= -1;
+            this.yVel *= -.9;
             this.y = canvas.height - this.h;
         }
         if (this.y < 0) {
-            this.yVel *= -1;
+            this.yVel *= -.9;
             this.y = 0;
         }
     }

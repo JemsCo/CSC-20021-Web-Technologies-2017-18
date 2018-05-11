@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * This script handles the signup modal input, responds to the post method request with a json object that determines.
+ *
+ * If the request had any errors in the input forms on the signup modal
+ * if not then the new users details will be appeded to the userdata.json file. 
+ *
+ * @package      Default
+ * @subpackage   Post
+ * @author       James Copping <w4f21@students.keele.ac.uk>
+ */
+
     require 'sesh.php';
 
     // define variables and set to empty values
@@ -80,13 +92,22 @@
         if(!$error['error']){
             $inp = file_get_contents('userdata.json');
             $tempArray = json_decode($inp);
-            $tempArray[] = array("username"=>$uname, "password"=>$password, "email"=>$email, "fname"=>$fname, "surname"=>$surname);
+            $tempArray[] = array("username"=>$uname, "password"=>$password, "email"=>$email, "fname"=>$fname, "surname"=>$surname, "datejoined"=>date("d-m-Y"));
             $jsonData = json_encode($tempArray);
             file_put_contents('userdata.json', $jsonData);
         }
         echo json_encode($error);
     }
 
+/**
+* This function checks if a part of the userser details that they entered already exist on file
+* meaning there is an error and the user will have to try again.
+*
+*
+* @param str $userdata the data that is being checked for
+* @param str &key the type of user data that is beeing checked for
+* @return bool returns true if the data already exits and false if not
+*/
     function exists($userdata, $key){
         $filedata = json_decode(file_get_contents('userdata.json'),true);
         for($i = 0; $i < sizeof($filedata); $i++){
@@ -97,10 +118,4 @@
         return false;
     }
 
-    function test_input($data) {
-      $data = trim($data);
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-    }
 ?>

@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Blog!</title>
+    <title>Abount - The Blog Project</title>
+    <meta name="description" content="This page shows all the information you need to know about the website" />
+    <meta name="robots" content="noindex,nofollow">
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,22 +15,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
 
     <script src="js/session.js"></script>
+    <script src="js/box.js"></script>
+    <script src="js/canvas.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
-    <div class="container-fluid px-0" style="overflow-x:hidden">
+    <div class="container-fluid px-0">
         <!-- Navbar header and brand -->
-        <nav class="navbar navbar-expand-sm py-3 bg-dark navbar-dark fixed-top">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">The Blog Project</a>
+        <nav class="navbar navbar-expand-md py-1 bg-dark navbar-dark fixed-top">
+            <div class="navbar-header align-items-center">
+                <a class="navbar-brand d-flex justify-content-around align-items-center" href="index.html">
+                    <canvas id="canvas" height="60" width="60" style="background:#343A40;"></canvas>
+                    <div class="mx-2">TBP</div>
+                </a>
             </div>
             <!-- Toggler/collapsible Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -40,14 +48,82 @@
                     <li class="nav-item">
                         <a class="nav-link " href="index.html">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posts.html">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">HTML CV</a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                 </ul>
+                <div id='pageOptions'>
+                    <button class="btn btn-dark" type='button' data-toggle='modal' data-target='#pageoptionsModal'>
+                        <i class="fa fa-cogs" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <div id='navbarRight' class="btn-group">
                 </div>
             </div>
         </nav>
+        <!-- Modal -->
+        <div class='modal fade' id='pageoptionsModal' role='dialog'>
+            <div class='modal-dialog'>
+                <!-- Modal content-->
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h4 class='modal-title'>Page Options</h4>
+                        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                    </div>
+                    <div class='modal-body'>
+                        <div id='pageoptionsForm'>
+                            <div class="d-flex align-items-between">
+                                <div class="d-flex flex-column justify-content-center align-items-start">
+                                    <small class="text-muted">Press the plus and minus buttons to change the size of the headers...</small>
+                                    <div class="d-flex justify-content-start align-items-baseline">
+                                        <h1>A</h1>
+                                        <h2>A</h2>
+                                        <h3>A</h3>
+                                        <h4>A</h4>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" onclick="setFontSize(getFontSize()+2)">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-primary" onclick="setFontSize(getFontSize()-2)">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column align-items-between">
+                                    <small class="text-muted">Select a color for the headings background</small>
+                                    <select id="backgroundSelected" class="m-2" name="background">
+                                        <option value="" selected>No Background</option>
+                                        <option value="black">Black</option>
+                                        <option value="gray">Gray</option>
+                                        <option value="white">White</option>
+                                        <option value="red">Red</option>
+                                        <option value="green">Green</option>
+                                        <option value="blue">Blue</option>
+                                        <option value="cyan">Cyan</option>
+                                    </select>
+                                    <button type="button" class="btn btn-primary" onclick="setHeaderColor(document.getElementById('backgroundSelected').value)">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class='modal-footer'>
+                                <div class='form-group btn-group float-right'>
+                                    <button type='submit' class='btn btn-success' onclick='saveOptions()'>Save Options</button>
+                                    <button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="jumbotron mt-5">
             <div class="continer">
